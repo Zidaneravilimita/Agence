@@ -1,0 +1,429 @@
+body {
+    margin: 0;
+    padding: 0;  
+    background-color: rgb(51, 56, 58);
+    font-family: "sans-serif";
+    overflow-x: hidden;
+}
+
+/* nav bar */
+nav {
+    display: flex;
+    width: 100%;
+    height: 3.5rem;
+    background-color: rgb(23, 30, 36);
+    padding-left: 25rem;
+}
+.navLink{
+    display: flex;
+    margin-top: -1px;
+}
+.navLink a{
+    display: block;
+    transition: all 1s;
+    position: relative;
+}
+.navLink a::after{
+     content: '';
+     position: absolute;
+     width: 90px;
+     height: 3px;
+     left: -9px;
+     bottom: -6px;
+     background-color: white;
+     border-radius: 2rem;
+     opacity: 0;
+     transition: .5s ease;
+     transform: scaleX(0);
+     transition: transform .3s;
+    }
+ .navLink a:hover::after{
+     opacity: 1;
+    transform: scaleX(1);
+    transform-origin: left;
+} 
+
+li {
+    list-style: none;
+    margin-left: 4rem;
+    padding-top: 15px;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* bouton de réservation */
+.reserv {
+    margin-left: 6rem;
+    margin-top: 13px;
+    height: 2rem;
+    width: 10rem;
+    padding: 4px;
+    color: white;
+    background-color: rgb(34, 33, 34);
+    border-radius: 5px;
+    border: solid 0.5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 20px rgba(94, 92, 92, 0.884);
+}
+
+.reserv:hover {
+    color: rgb(25, 88, 88);
+    background-color: white;
+    box-shadow: 2px 0 20px aqua;
+}
+
+/* fond */
+.fond {
+    width: 100%;
+    height: 34rem;
+}
+
+/* titre avec des boutons */
+.titre {
+    margin-top: -28rem;
+    margin-left: 35rem;
+}
+
+h2 {
+    color: rgb(15, 83, 69);
+    margin-top: -2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+h1 {
+    margin-left: -12rem;
+    color: rgb(15, 83, 69);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3rem; /* Taille du texte */
+    font-weight: bold; /* Épaisseur du texte */
+    text-transform: uppercase; /* Convertit le texte en majuscules */
+    letter-spacing: 1px; /* Espace entre les caractères */
+}
+
+.btn1, .btn2 {
+    height: 2rem;
+    width: 7rem;
+    color: white;
+    border-color: white;
+    cursor: pointer;
+    margin-left: 1.4rem;
+    border: 1px solid white;
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgb(12, 83, 83);
+}
+
+.btn2 {
+    background-color: rgb(12, 83, 83);
+}
+.btn1 {
+    background-color: transparent;
+}
+
+.btn1:hover, .btn2:hover {
+    color: rgb(9, 46, 46);
+    background-color: white;
+    border: 1px solid rgb(12, 83, 83);
+}
+
+.btn {
+    margin-left: -2.4rem;
+}
+
+#Acceuil {
+ margin-bottom: 16.4rem;
+}
+
+/* SECTION DE DESTINATION */
+#Destination{
+    padding-top: 4rem;
+    background-color: rgb(51, 56, 58);
+}
+
+/* les box d'image */
+.img1, .img2, .img3, .img4, .img5, .img6, .img7, .img8, .img9 {
+    width: 23rem;
+    height: 14rem;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.tribox1, .tribox2, .tribox3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 6rem;
+}
+
+.box {
+    position: relative;
+    width: 23rem;
+    margin-left: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 3px 5px 10px rgba(133, 129, 129, 0.753);
+}
+
+.box:hover {
+    box-shadow: 0 0 20px rgb(15, 145, 117);
+}
+
+/* contenu dans les box */
+.content {
+    position: relative;
+    color: white;
+    margin-top: -9rem;
+    align-items: center;
+    text-align: center;
+}
+.Information{
+   padding-top: 8rem;
+}
+
+.vr_pls1, .vr_pls {
+    height: 1.7rem;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    border-radius: 4px;
+    width: 5rem;
+    cursor: pointer;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+
+.vr_pls:hover {
+    background-color: rgba(21, 116, 68, 0.849);
+}
+
+/*Agrandissement d'image*/
+.agrandirImg1, .agrandirImg2{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    object-fit: cover;
+    z-index: 1000;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(45deg, #333, #000);
+   display: none;
+}
+.btn-fermer-slider{
+    position: absolute;
+    cursor: pointer;
+    top: 3%;
+    right: 2%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 30px;
+    outline: none;
+    border: none;
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+/* bouton fleche gauche et droit */
+.prev, .next {
+    color: #0b0d7c;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 16rem;
+}
+
+.prev {
+    left: 5px;
+}
+
+.next {
+    right: 5px;
+}
+
+.next:hover, .prev:hover {
+    color: rgb(22, 22, 224);
+}
+
+/* Slider */
+
+.ImgSlider, .ImgSlider2, .ImgSlider3{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    top: 30%;
+}
+.ImgSlider img, .ImgSlider2 img, .ImgSlider3 img{
+     width: 20%;
+     padding-left: 4rem;
+}
+.imgTitre {
+    width: 100%;
+    display: flex;
+    max-height: 14rem;
+    position: relative;
+    margin: 0, auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* CSS pour cacher les images de slide sauf la première */
+.imgs {
+    display: none;
+}
+
+.img1, .img2, .img3, .img4, .img5, .img6, .img7, .img8, .img9 {
+    display: block;
+}
+
+
+/* SECTION A PROPOS */
+#apropos{
+    background-color: rgb(216, 208, 208);
+   height: 20rem;
+}
+.offr{
+    margin-left: 25rem;
+    color: rgb(105, 88, 167);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.4rem;
+    font-weight: bold; /* Épaisseur du texte */
+    text-transform: uppercase; /* Convertit le texte en majuscules */
+    letter-spacing: 1px; /* Espace entre les caractères */
+}
+.boxApropos{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.Bx_Apr{
+    background-color: #0b0d7c;
+    color: aliceblue;
+    margin-left: 3rem;
+    height: 7rem;
+    width: 20rem;
+    cursor: pointer;
+     
+}
+.Bx_Apr:hover{
+    width: 20.4rem;
+    box-shadow: 0px 0px 10px rgb(43, 41, 41);
+}
+/*Bouton voir prix */
+.btn-bxApr{
+    width: 7rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+
+/* SECTION CONTACT */
+#contact{
+    margin-top: -2rem;
+    background-color: rgb(40, 22, 61);
+    height: 30rem;
+}
+
+.conTitre{
+    margin-left: 30rem;
+    color: rgb(192, 184, 180);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.4rem;
+    font-weight: bold; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
+
+/* style de formulaire */
+.formulaire{
+    margin-left: 10rem;
+    margin-top: 5rem;
+}
+.email{
+    width: 18rem;
+    height: 2rem;
+    margin-bottom: 0.8rem;
+    outline: none;
+    border-radius: 3px;
+    border: solid 1px black;
+}
+.textarea{
+    width: 18rem;
+    margin-bottom: 0.8rem;
+    outline: none;
+    border-radius: 3px;
+}
+.subm{
+    height: 1.7rem;
+    margin-left: 4rem;
+    width: 10rem;
+    cursor: pointer;
+}
+.maps{
+    height: 20rem;
+    width: 35rem;
+    margin-left: 45rem;
+    margin-top: -18rem;
+}
+.MapTitre{
+    transform: translate(0, -18rem);
+    margin-left: 58rem;
+    color: rgb(25, 88, 88);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.4rem;
+    font-weight: bold; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
+
+
+/* FOOTER ---- PIED DE LA PAGE */
+footer{
+    background-color: rgb(37, 37, 37);
+    margin-top: -2rem;
+}
+.footerContent{
+    position: relative;
+    display: flex;
+    
+    margin-left: 10rem;
+}
+.footerLink1{
+    color: white;
+    padding-top: 1px;
+    margin-left: -6.2rem;
+    margin-top: -3rem;
+}
+.footerLink2{
+    color: white;
+    padding-top: 1px;
+    margin-left: -2.5rem;
+    margin-top: -3rem;
+}
+.footerLink3{
+    color: white;
+    padding-top: 1px;
+    margin-left: -2.2rem;
+    margin-top: -5rem;
+}
+.footerSection{
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.reseau{
+    margin-top: -5rem;
+    margin-left: -2rem;
+}
+.reseau a{
+    padding-left: 1rem;
+    text-decoration: none;
+}
