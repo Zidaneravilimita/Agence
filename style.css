@@ -212,7 +212,7 @@ h1 {
     left: 0;
     right: 0;
     background: linear-gradient(45deg, #333, #000);
-   display: none;
+    display: none;
 }
 .btn-fermer-slider{
     position: absolute;
@@ -256,14 +256,18 @@ h1 {
 
 .ImgSlider, .ImgSlider2, .ImgSlider3{
     display: flex;
-    width: 100%;
     justify-content: center;
     position: relative;
     top: 30%;
+    overflow: hidden; 
+    height: 80%; 
 }
 .ImgSlider img, .ImgSlider2 img, .ImgSlider3 img{
-     width: 20%;
+     width: 45%;
+     object-fit: cover;
      padding-left: 4rem;
+     height: 100%;
+     margin-top: -13rem; 
 }
 .imgTitre {
     width: 100%;
