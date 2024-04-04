@@ -208,9 +208,7 @@ h1 {
     object-fit: cover;
     z-index: 1000;
     top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
     background: linear-gradient(45deg, #333, #000);
     display: none;
 }
@@ -231,24 +229,25 @@ h1 {
 }
 
 /* bouton fleche gauche et droit */
-.prev, .next {
+.prev1, .next1 {
     color: #0b0d7c;
     cursor: pointer;
     width: 2rem;
     height: 2rem;
     position: absolute;
-    top: 16rem;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.prev {
+.prev1 {
     left: 5px;
 }
 
-.next {
+.next1 {
     right: 5px;
 }
 
-.next:hover, .prev:hover {
+.next1:hover, .prev1:hover {
     color: rgb(22, 22, 224);
 }
 
@@ -258,13 +257,11 @@ h1 {
     display: flex;
     justify-content: center;
     position: relative;
-    top: 30%;
-    overflow: hidden; 
-    height: 80%; 
+    top: 17rem;
+    height: 75%; 
 }
 .ImgSlider img, .ImgSlider2 img, .ImgSlider3 img{
      width: 45%;
-     object-fit: cover;
      padding-left: 4rem;
      height: 100%;
      margin-top: -13rem; 
@@ -291,35 +288,35 @@ h1 {
 /* SECTION A PROPOS */
 #apropos{
     background-color: rgb(216, 208, 208);
-   height: 20rem;
+    height: 40rem;
 }
 .offr{
-    margin-left: 25rem;
     color: rgb(105, 88, 167);
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 25rem;
+    font-family: Georgia,  Times;
     font-size: 2.4rem;
-    font-weight: bold; /* Épaisseur du texte */
-    text-transform: uppercase; /* Convertit le texte en majuscules */
-    letter-spacing: 1px; /* Espace entre les caractères */
+    font-weight: bold; 
+    text-transform: uppercase;
+    letter-spacing: 1px; 
 }
 .boxApropos{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    justify-content: space-between 4rem;
+    align-items: center;
     gap: 2rem;
+    margin-left: 1rem;
 }
 .Bx_Apr{
-    background-color: #0b0d7c;
+    background-color: #5e5e79;
     color: aliceblue;
-    margin-left: 3rem;
-    height: 7rem;
-    width: 20rem;
-    cursor: pointer;
+    margin: 0rem;
+    height: 28rem;
+    width: 24rem;
+    border-radius: 5px;
+    padding: 1rem;
      
 }
-.Bx_Apr:hover{
-    width: 20.4rem;
-    box-shadow: 0px 0px 10px rgb(43, 41, 41);
-}
+
 /*Bouton voir prix */
 .btn-bxApr{
     width: 7rem;
@@ -336,7 +333,7 @@ h1 {
 }
 
 .conTitre{
-    margin-left: 30rem;
+    margin-left: 32rem;
     color: rgb(192, 184, 180);
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2.4rem;
